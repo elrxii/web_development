@@ -38,14 +38,14 @@ HTMLVIEWLINE("<link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesh
 
 
  HTMLVIEWLINE("<style>")
- HTMLVIEWLINE(" body {background-color: #233b57; font-family: 'Calibri'; }  ")
+ HTMLVIEWLINE(" body {background-color: white; font-family: 'Calibri'; }  ")
 
 
  HTMLVIEWLINE(" div { padding: 20px;  border-radius: 5px;}   ")
 
 
- HTMLVIEWLINE("input[type='submit'] {  width: 400px; border: none; color: white; background-color: #8496AD; cursor: pointer;  padding: 9px 9px; }  ") 
- HTMLVIEWLINE("input[type='submit']:hover { text-decoration: underline; background-color: #1261A0; } ")
+ HTMLVIEWLINE("input[type='submit'] {  width: 400px; border: none; color: white; background-color: #3b5998; cursor: pointer;  padding: 9px 9px; }  ") 
+ HTMLVIEWLINE("input[type='submit']:hover { text-decoration: none; background-color: #4e71ba; } ")
 
 
  HTMLVIEWLINE(" .radio { cursor: pointer;}  ") 
@@ -58,8 +58,8 @@ HTMLVIEWLINE("<link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesh
  HTMLVIEWLINE(" font-size: 14px; text-decoration: none; padding: 7px; border-radius: 10px; text-align: center; } ")  
  HTMLVIEWLINE(".boxhead a:hover { text-decoration: underline; background-color: #79CDCD; color: white; }   ")
 
- HTMLVIEWLINE(" form { width: 400px; margin: auto; border: 3px solid black; background-color: white; } ")  
- HTMLVIEWLINE(" legend {  background-color: #d3d3d3; color: black; padding: 5px 9px;  }   ")
+ HTMLVIEWLINE(" form { width: 400px; margin: auto; border: 3px solid gray; background-color: ##E6E6FA; } ")  
+ HTMLVIEWLINE(" legend {  font-size: 20px; background-color: #e8e8e8; color: black; padding: 5px 9px;  }   ")
  HTMLVIEWLINE(" fieldset {  border: 0;  }   ")
 
  HTMLVIEWLINE(" .joint { font-size: 12px; margin-left: 20px; padding-top: 1px;}  ") 
@@ -85,18 +85,18 @@ HTMLVIEWLINE("<body>")
 
 
 HTMLVIEWLINE("<div class='container'>")
-HTMLVIEWLINE("<div class='row'>")
-HTMLVIEWLINE("<div class='col text-center'>")
-HTMLVIEWLINE(" <a class='btn btn-primary  ' href='https://cardatonce.eftsource.com/Home/Login' target='_blank'>Login to Card@Once </a> ")
-HTMLVIEWLINE("</div>")
-HTMLVIEWLINE("</div>")
+  HTMLVIEWLINE("<div class='row'>")
+   HTMLVIEWLINE("<div class='col text-center'>")
+  HTMLVIEWLINE(" <a class='btn btn-info  ' href='https://cardatonce.eftsource.com/Home/Login' target='_blank'>Login to Card@Once </a> ")
+   HTMLVIEWLINE("</div>")
+  HTMLVIEWLINE("</div>")
 HTMLVIEWLINE("</div>")
 
 HTMLVIEWLINE("<div class='pinOffsetForm'>")
 HTMLVIEWLINE("<form name='htmlrginputform' METHOD=POST ACTION=symitar://HTMLView~Action=Post>")
 
 
-HTMLVIEWLINE("<h2>Pin Offset Change")
+HTMLVIEWLINE("<h2>Pin-Offset Change")
 HTMLVIEWLINE("<br>")
 
 
@@ -113,20 +113,20 @@ HTMLVIEWLINE("<div class='cardList'>")
     DO
      CARDLOC=CARD:LOCATOR
 
-     HTMLVIEWLINE("<span onclick=highlight(this); >")
+     HTMLVIEWLINE("<span onclick=highlight(this);  >")
 
      HTMLVIEWLINE("<input type='radio' class='radio' name='cardLoc' id="+FORMAT("999",CARDLOC)+"  value="+FORMAT("999",CARDLOC)+"  required>")
      HTMLVIEWLINE(CARD:NUMBER)
      HTMLVIEWLINE("</span><br>")
      HTMLVIEWLINE("<ul class='list-group'>")
-     HTMLVIEWLINE("<li  class='list-group-item py-2'>")
+     HTMLVIEWLINE("<li  class='list-group-item py-2'  style='font-size: 13px;'>")
      HTMLVIEWLINE(NAME:LONGNAME)
      HTMLVIEWLINE("</li></ul>")
 
      HTMLVIEWLINE("<ul class='list-group'>")
      FOR EACH CARD NAME
 	 DO
-       HTMLVIEWLINE("<li class='list-group-item py-2'>")
+       HTMLVIEWLINE("<li class='list-group-item py-2'  style='font-size: 13px;'>")
        HTMLVIEWLINE(CARD NAME:LONGNAME)
        HTMLVIEWLINE("</li>")
 	 END
