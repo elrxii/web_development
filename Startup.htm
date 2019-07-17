@@ -1,0 +1,276 @@
+<!-- 
+
+     Created by 
+     Ethan Roberts 
+     on 01/06/2019 
+	 
+-->
+
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+
+<head>
+    <meta charset="utf-8">
+   
+	
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<title>Symitar for Windows Startup Page</title>
+<style>
+
+
+
+
+.btn {
+	
+}
+
+
+
+.center {
+  text-align: center;
+}
+
+
+
+.header {
+  text-align: center;
+  color: "white";
+  padding: 5px; 
+}
+
+
+
+.image{
+	
+  margin: auto;
+}
+
+
+.card{
+	box-shawdow: 0 4 px 8px 0 rgba(0,0,0,0,2);
+	transition: 0.3s;
+}
+
+
+.card:hover{
+	box-shadow: 0 20px 40px 0 rgba(0,0,0,0.2);
+	text-decoration: none;
+}
+
+
+.wrapper {
+	padding-bottom: 100px;
+	background-color: #233b57;
+}
+
+
+
+
+</style>
+</head>
+
+
+
+
+<body>
+<div style="background-color: #233b57">
+<div class="jumbotron text-center"  style="background-color:transparent !important;">
+<!--  <h1 style="color:#F0F4F9">Family Security Credit Union</h1> -->
+</div>
+
+
+<div style="background-color: #F0F4F9">
+<div class="d-flex justify-content-center">
+  <div class="col-lg-7 d-flex">
+
+  <div class="card" style="width:900px;  margin-top: 20px;  margin-bottom: 20px;">
+      <a href="symitar://NAVIGATE~LOCATION=HOSTLOGON~MODE=1"   style="color:black; text-decoration: none;">
+
+  
+  <img class="card-img-top" src="episys.png" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Episys</h4>
+	<p> Login to the Episys platform.<p>
+		<br><br><br>
+    <a href="#"  class="btn btn-primary btn-block" onClick="logOn()">Login to Episys</a>
+  </div>
+   </a>
+ </div>
+
+
+ 
+
+ <div class="card" style="width:900px; margin-left:35px;  margin-top: 20px;  margin-bottom: 20px;">
+   <a href="https://workforcenow.adp.com/workforcenow/login.html"   target="_blank" style="color:black; text-decoration: none;">
+ 
+  <img class="card-img-top" src="adp.png" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title"><br>ADP</h4>
+	<p>Clock-In or Clock-Out with ADP Workforce Portal.<br><br><br></p>
+    <a href="https://workforcenow.adp.com/workforcenow/login.html"   target="_blank" class="btn btn-outline-dark btn-block">Go</a>
+  </div>
+  
+  </a>
+</div>
+
+
+
+ <div class="card" style="width:900px;  margin-left:35px;  margin-top: 20px; margin-bottom: 20px;">
+ 
+    <a href="http://fsdmc01/site/fm.shtml"   target="_blank" style="color:black; text-decoration: none;">
+	
+	
+  <img class="card-img-top" src="fscu.png" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Family Matters</h4>
+	<p>View the latest promotions, news, and events that are going on currently.</p><br>
+    <a href="http://fsdmc01/site/fm.shtml"   target="_blank" class="btn btn-outline-dark btn-block">Go</a>
+  </div>
+  </a>
+</div>
+
+
+
+ <div class="card" style="width:900px; margin-left:35px;  margin-top: 20px;  margin-bottom: 20px;">
+     <a href="http://fsdmc01/site/infosys/index.shtml"   target="_blank" style="color:black; text-decoration: none;">
+  <img class="card-img-top" src="computer.png" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Information Systems</h4>
+	<p>Contact the Information Systems department.</p><br><br>
+    <a href="http://fsdmc01/site/infosys/index.shtml"   target="_blank" class="btn btn-outline-dark btn-block">Go</a>
+  </div>
+  </a>
+</div>
+
+
+
+
+
+ </div>
+ </div>
+ 
+ 
+ 
+ 
+ </div>
+
+ 
+ <div class="wrapper" style="background-color: #233b57;">
+ <footer id="sticky-footer" class="py-4 text-white-50">
+   <div class="container text-center">
+     <small> Copyright &copy Ethan Roberts</small>
+   </div>   
+ </footer>
+ </div>
+
+ 
+ </body>
+ 
+
+<script>
+
+
+
+function logOnMouseOver() {
+  var x = document.getElementById("button");
+  x.style.color = "white";
+  x.style.background = "#4682B4";
+  x.style.textDecoration="underline";
+  
+
+}
+
+
+function logOnMouseOut() {
+  var x = document.getElementById("button");
+  x.style.color = "#4682B4";
+  x.style.background = "white";
+  x.style.fontWeight = "normal";
+  x.style.textDecoration="none";
+
+}
+
+
+
+function adpMouseOver() {
+  var x = document.getElementById("adpbutton");
+  x.style.color = "white";
+  x.style.background = "red";
+  x.style.textDecoration="underline";
+  
+}
+
+
+function adpMouseOut() {
+  var x = document.getElementById("adpbutton");
+  x.style.color = "red";
+  x.style.background = "white";
+  x.style.textDecoration="none";
+	
+
+}
+
+
+
+function synMouseOver() {
+  var x = document.getElementById("synButton");
+  x.style.color = "white";
+  x.style.background = "orange";
+   x.style.textDecoration="underline";  
+}
+
+
+function synMouseOut() {
+  var x = document.getElementById("synButton");
+  x.style.color = "orange";
+  x.style.background = "white";
+  x.style.fontWeight = "normal";	
+  x.style.textDecoration="none";
+}
+
+
+
+function goToADP() {
+  window.open("https://workforcenow.adp.com/workforcenow/login.html");
+}
+
+
+
+function goToEmail() {
+  window.open("https://webmail.myfscu.com/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fwebmail.myfscu.com%2fowa%2f");
+}
+
+
+
+function goToSyn() {
+ var oShell = new ActiveXObject("Shell.Application");
+ var commandToRun = "C:\Program Files (x86)\JHA\Synergy\SynergyClient.exe";
+ oShell.ShellExecute(commandToRun,"","","open","1");
+}
+
+
+
+function logOn() {
+  location.href = "symitar://NAVIGATE~LOCATION=HOSTLOGON~MODE=1";
+}
+
+
+
+function logOnTestSym() {
+  location.href = "symitar://NAVIGATE~LOCATION=HOSTLOGON~MODE=1~MACHINE=symitar~SYM=901";
+}
+
+</script>
+
+
+
+
+
+
