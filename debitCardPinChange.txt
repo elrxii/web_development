@@ -58,7 +58,7 @@ HTMLVIEWLINE("<link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesh
  HTMLVIEWLINE(" font-size: 14px; text-decoration: none; padding: 7px; border-radius: 10px; text-align: center; } ")  
  HTMLVIEWLINE(".boxhead a:hover { text-decoration: underline; background-color: #79CDCD; color: white; }   ")
 
- HTMLVIEWLINE(" form { width: 400px; margin: auto; border: 3px solid gray; background-color: ##E6E6FA; } ")  
+ HTMLVIEWLINE(" form { width: 400px; margin: auto; border: 3px solid gray; background-color: ##E6E6FA; border-radius: 9px; padding-top: 40px; } ")  
  HTMLVIEWLINE(" legend {  font-size: 20px; background-color: #e8e8e8; color: black; padding: 5px 9px;  }   ")
  HTMLVIEWLINE(" fieldset {  border: 0;  }   ")
 
@@ -72,9 +72,6 @@ HTMLVIEWLINE(" .center { margin: auto; } ")
 HTMLVIEWLINE("</style>")
 
 
-
-
-
 [ END CSS ]
 
 
@@ -86,7 +83,7 @@ HTMLVIEWLINE("<body>")
 
 HTMLVIEWLINE("<div class='container'>")
   HTMLVIEWLINE("<div class='row'>")
-   HTMLVIEWLINE("<div class='col text-center'>")
+   HTMLVIEWLINE("<div class='col text-center'>  ")
   HTMLVIEWLINE(" <a class='btn btn-info  ' href='https://cardatonce.eftsource.com/Home/Login' target='_blank'>Login to Card@Once </a> ")
    HTMLVIEWLINE("</div>")
   HTMLVIEWLINE("</div>")
@@ -114,16 +111,15 @@ HTMLVIEWLINE("<div class='cardList'>")
      CARDLOC=CARD:LOCATOR
 
      HTMLVIEWLINE("<span onclick=highlight(this);  >")
-
-     HTMLVIEWLINE("<input type='radio' class='radio' name='cardLoc' id="+FORMAT("999",CARDLOC)+"  value="+FORMAT("999",CARDLOC)+"  required>")
+     HTMLVIEWLINE("<input type='radio' class='radio' name='cardLoc' id="+FORMAT("999",CARDLOC)+"  style='font-size: 15px; margin-bottom: 11px;' value="+FORMAT("999",CARDLOC)+"  required>")
      HTMLVIEWLINE(CARD:NUMBER)
      HTMLVIEWLINE("</span><br>")
-     HTMLVIEWLINE("<ul class='list-group'>")
-     HTMLVIEWLINE("<li  class='list-group-item py-2'  style='font-size: 13px;'>")
+     HTMLVIEWLINE("<ul class='list-group list-group-flush'>")
+     HTMLVIEWLINE("<li  class='list-group-item py-2'  style='font-size: 13px; '>")
      HTMLVIEWLINE(NAME:LONGNAME)
      HTMLVIEWLINE("</li></ul>")
 
-     HTMLVIEWLINE("<ul class='list-group'>")
+     HTMLVIEWLINE("<ul class='list-group list-group-flush'>")
      FOR EACH CARD NAME
 	 DO
        HTMLVIEWLINE("<li class='list-group-item py-2'  style='font-size: 13px;'>")
