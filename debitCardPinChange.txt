@@ -37,9 +37,6 @@ SETUP
      POPUPMESSAGE(0,"There are no active debit cards on this account.")
      TERMINATE
     END
-
-
-
  HTMLVIEWOPEN(0)
  HTMLVIEWLINE("<!DOCTYPE>")
  [HTMLVIEWLINE("<meta http-equiv='Access-Control-Allow-Origin' content='*'>")]
@@ -83,6 +80,7 @@ HTMLVIEWLINE("<link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesh
  HTMLVIEWLINE(" span:hover {  color: green; text-align: center; } ")
 
  HTMLVIEWLINE(" #submit { width: 394px;  margin: auto; margin-top: 35px;} ")
+ HTMLVIEWLINE(" input:focus { border-color: black; } ")
 
 HTMLVIEWLINE(" .center { margin: auto; } ")
 
@@ -149,7 +147,7 @@ HTMLVIEWLINE("<div class='cardList'>")
     END
 
 HTMLVIEWLINE("<div style='margin-left: 10px;' text-align='center' > ")
-HTMLVIEWLINE("<label for='pinOffset'>New Pin Offset:&nbsp </label>")
+HTMLVIEWLINE("<label for='pinOffset'>New Pin Offset:&nbsp&nbsp&nbsp </label>")
 
 
 HTMLVIEWLINE("<input type='text' name='pinOffset' id='pinOffset' value=''  placeholder='Enter new pin...' onkeypress='return func(event)'>    ")
