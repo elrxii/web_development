@@ -22,9 +22,24 @@ DEFINE
  CARDLOC = NUMBER
  CARDNUMBER = CHARACTER
  LASTFOUR = CHARACTER
+ CARDCOUNTER = NUMBER
 END
 
 SETUP
+   CARDCOUNTER = 0
+   FOR EACH CARD WITH CARD:STATUS = 1 AND
+                     CARD:EXPIRATIONDATE > SYSTEMDATE
+    DO
+     CARDCOUNTER = CARDCOUNTER + 1
+    END
+   IF CARDCOUNTER < 1 THEN
+    DO
+     POPUPMESSAGE(0,"There are no active debit cards on this account.")
+     TERMINATE
+    END
+
+
+
  HTMLVIEWOPEN(0)
  HTMLVIEWLINE("<!DOCTYPE>")
  [HTMLVIEWLINE("<meta http-equiv='Access-Control-Allow-Origin' content='*'>")]
@@ -41,7 +56,7 @@ HTMLVIEWLINE("<link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesh
  HTMLVIEWLINE(" body {background-color: white; font-family: 'Calibri'; }  ")
 
 
- HTMLVIEWLINE(" div { padding: 20px;  border-radius: 5px;}   ")
+ HTMLVIEWLINE(" div {   border-radius: 5px;}   ")
 
 
  HTMLVIEWLINE("input[type='submit'] {  width: 400px; border: none; color: white; background-color: #3b5998; cursor: pointer;  padding: 9px 9px; }  ") 
@@ -58,14 +73,16 @@ HTMLVIEWLINE("<link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesh
  HTMLVIEWLINE(" font-size: 14px; text-decoration: none; padding: 7px; border-radius: 10px; text-align: center; } ")  
  HTMLVIEWLINE(".boxhead a:hover { text-decoration: underline; background-color: #79CDCD; color: white; }   ")
 
- HTMLVIEWLINE(" form { width: 400px; margin: auto; border: 3px solid gray; background-color: ##E6E6FA; border-radius: 9px; padding-top: 40px; } ")  
- HTMLVIEWLINE(" legend {  font-size: 20px; background-color: #e8e8e8; color: black; padding: 5px 9px;  }   ")
+ HTMLVIEWLINE(" form { width: 400px; margin: auto; border: 3px solid gray; background-color: ##E6E6FA; border-radius: 9px; ")
+ HTMLVIEWLINE("    padding-top: 40px; padding-left: 0px; padding-right: 0px; padding-bottom: 0px; margin-top: 30px; }    ")
+ 
+ HTMLVIEWLINE(" legend {  font-size: 20px; background-color: #e8e8e8; color: black; padding: 5px 9px; margin-bottom: 20px; }   ")
  HTMLVIEWLINE(" fieldset {  border: 0;  }   ")
 
  HTMLVIEWLINE(" .joint { font-size: 12px; margin-left: 20px; padding-top: 1px;}  ") 
  HTMLVIEWLINE(" span:hover {  color: green; text-align: center; } ")
 
- HTMLVIEWLINE(" #submit { width: 394px;  margin: auto; } ")
+ HTMLVIEWLINE(" #submit { width: 394px;  margin: auto; margin-top: 35px;} ")
 
 HTMLVIEWLINE(" .center { margin: auto; } ")
 
@@ -111,15 +128,16 @@ HTMLVIEWLINE("<div class='cardList'>")
      CARDLOC=CARD:LOCATOR
 
      HTMLVIEWLINE("<span onclick=highlight(this);  >")
-     HTMLVIEWLINE("<input type='radio' class='radio' name='cardLoc' id="+FORMAT("999",CARDLOC)+"  style='font-size: 15px; margin-bottom: 11px;' value="+FORMAT("999",CARDLOC)+"  required>")
+     HTMLVIEWLINE("<input type='radio' class='radio' name='cardLoc' id="+FORMAT("999",CARDLOC)+" ")
+     HTMLVIEWLINE(" style='font-size: 15px; margin-left: 15px;  margin-top: 15px; margin-bottom: 10px;'  value="+FORMAT("999",CARDLOC)+"  required>  ")
      HTMLVIEWLINE(CARD:NUMBER)
      HTMLVIEWLINE("</span><br>")
-     HTMLVIEWLINE("<ul class='list-group list-group-flush'>")
-     HTMLVIEWLINE("<li  class='list-group-item py-2'  style='font-size: 13px; '>")
+     HTMLVIEWLINE("<ul class='list-group list-group-flush'  style='margin-left: 10px;' >")
+     HTMLVIEWLINE("<li  class='list-group-item py-2'  style='font-size: 13px;'  >")
      HTMLVIEWLINE(NAME:LONGNAME)
      HTMLVIEWLINE("</li></ul>")
 
-     HTMLVIEWLINE("<ul class='list-group list-group-flush'>")
+     HTMLVIEWLINE("<ul class='list-group list-group-flush' style='margin-left: 10px;'>")
      FOR EACH CARD NAME
 	 DO
        HTMLVIEWLINE("<li class='list-group-item py-2'  style='font-size: 13px;'>")
@@ -130,10 +148,12 @@ HTMLVIEWLINE("<div class='cardList'>")
     HTMLVIEWLINE("<br><br>")
     END
 
-HTMLVIEWLINE(" ")
-HTMLVIEWLINE("<label for='pinOffset'>New Pin Offset:&nbsp&nbsp&nbsp </label>")
-HTMLVIEWLINE("<input type='text' name='pinOffset' id='pinOffset' value=''  placeholder='Enter new pin...' onkeypress='return func(event)'>    ")
+HTMLVIEWLINE("<div style='margin-left: 10px;' text-align='center' > ")
+HTMLVIEWLINE("<label for='pinOffset'>New Pin Offset:&nbsp </label>")
 
+
+HTMLVIEWLINE("<input type='text' name='pinOffset' id='pinOffset' value=''  placeholder='Enter new pin...' onkeypress='return func(event)'>    ")
+HTMLVIEWLINE("<div > ")
 
 HTMLVIEWLINE("</div>")
 
